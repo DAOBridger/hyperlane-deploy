@@ -1,5 +1,12 @@
+import dotenv from 'dotenv';
+
 import { ChainMap, ChainMetadata, ProtocolType } from '@hyperlane-xyz/sdk';
 
+dotenv.config();
+
+console.log(
+  `https://linea-goerli.infura.io/v3/${process.env.INFURA_API_KEY || ''}`,
+);
 // import { chainMetadata } from '@hyperlane-xyz/sdk';
 // A map of chain names to ChainMetadata
 export const chains: ChainMap<ChainMetadata> = {
@@ -33,6 +40,18 @@ export const chains: ChainMap<ChainMetadata> = {
     rpcUrls: [
       {
         http: 'http://127.0.0.1:8555',
+      },
+    ],
+  },
+  lineagoerli: {
+    name: 'lineagoerli',
+    protocol: ProtocolType.Ethereum,
+    chainId: 59140,
+    rpcUrls: [
+      {
+        http: `https://linea-goerli.infura.io/v3/${
+          process.env.INFURA_API_KEY || ''
+        }`,
       },
     ],
   },

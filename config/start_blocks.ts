@@ -22,4 +22,5 @@ export const startBlocks: ChainMap<number> = {
   moonbasealpha: 3310405,
   optimismgoerli: 3055263,
   arbitrumgoerli: 1941997,
+  lineagoerli: 1362965,
 };
